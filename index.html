@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رمضان كريم 🌙</title>
+
+    <!-- Google Fonts - Modern Arabic Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #f0f0f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            direction: rtl;
+        }
+
+        /* ===== STARS BACKGROUND ===== */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* ===== CRESCENT MOON DECORATION ===== */
+        .crescent {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            font-size: 60px;
+            opacity: 0.3;
+            z-index: 2;
+            animation: glow 4s infinite ease-in-out;
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+            }
+
+            50% {
+                opacity: 0.6;
+                filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.6));
+            }
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== MAIN CONTENT CARD ===== */
+        .content-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.2s ease-out;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        .main-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            animation: fadeIn 1.5s ease-out 0.3s both;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #e0e0e0;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-out 0.6s both;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #b8b8b8;
+            line-height: 1.9;
+            margin-bottom: 40px;
+            animation: fadeIn 1.5s ease-out 0.9s both;
+        }
+
+        /* ===== BUTTON STYLES ===== */
+        .btn {
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 100%);
+            color: #1a1a2e;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            font-family: 'Tajawal', sans-serif;
+            animation: fadeIn 1.5s ease-out 1.2s both;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, #f4e4a6 0%, #d4af37 100%);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* ===== COUNTDOWN TIMER ===== */
+        .countdown {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            animation: fadeIn 1.5s ease-out 1.5s both;
+        }
+
+        .countdown-title {
+            font-size: 1.1rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .countdown-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 15px 20px;
+            border-radius: 15px;
+            min-width: 80px;
+        }
+
+        .countdown-value {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 5px;
+        }
+
+        .countdown-label {
+            display: block;
+            font-size: 0.9rem;
+            color: #b8b8b8;
+            font-weight: 400;
+        }
+
+        /* ===== HIDDEN MESSAGE SECTION ===== */
+        .hidden-section {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.8s ease;
+            margin-top: 0;
+        }
+
+        .hidden-section.revealed {
+            max-height: 2000px;
+            opacity: 1;
+            margin-top: 50px;
+        }
+
+        .hidden-content {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .hidden-message {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #d4af37;
+            line-height: 1.9;
+            margin-bottom: 40px;
+        }
+
+        /* ===== IMAGE GALLERY ===== */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .ramadan-image {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            min-height: 200px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .ramadan-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .crescent {
+                top: 20px;
+                left: 20px;
+                font-size: 40px;
+            }
+
+            .content-card {
+                padding: 40px 25px;
+                border-radius: 20px;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+
+            .btn {
+                font-size: 1.1rem;
+                padding: 15px 35px;
+            }
+
+            .countdown-item {
+                min-width: 70px;
+                padding: 12px 15px;
+            }
+
+            .countdown-value {
+                font-size: 1.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.8rem;
+            }
+
+            .hidden-message {
+                font-size: 1.1rem;
+            }
+
+            .ramadan-image {
+                font-size: 60px;
+                min-height: 150px;
+                padding: 30px;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .message {
+                font-size: 0.95rem;
+            }
+
+            .countdown-numbers {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Crescent Moon Decoration -->
+    <div class="crescent">🌙</div>
+
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="content-card">
+            <!-- Main Title -->
+            <h1 class="main-title">رمضان كريم 🌙</h1>
+
+            <!-- Subtitle -->
+            <p class="subtitle">كل سنة وانتوا طيبين وربنا يجعله شهر خير وبركة علينا كلنا</p>
+
+            <!-- Message -->
+            <p class="message">يارب الأيام الجاية تكون أهدى وأجمل ونخرج من الشهر ده بقلب أخف ونية أنضف</p>
+
+            <!-- Button -->
+            <button class="btn" id="revealBtn">افتح الرسالة</button>
+
+            <!-- Countdown Timer -->
+            <div class="countdown">
+                <div class="countdown-title">العد التنازلي للعيد</div>
+                <div class="countdown-numbers" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="days">--</span>
+                        <span class="countdown-label">يوم</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours">--</span>
+                        <span class="countdown-label">ساعة</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes">--</span>
+                        <span class="countdown-label">دقيقة</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds">--</span>
+                        <span class="countdown-label">ثانية</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden Section (revealed on button click) -->
+            <div class="hidden-section" id="hiddenSection">
+                <div class="hidden-content">
+                    <p class="hidden-message">ربنا يتقبل منا ومنكم ويكتب لنا الخير في كل خطوة</p>
+
+                    <!-- Image Gallery with CSS-generated decorations -->
+                    <div class="image-gallery">
+                        <div class="ramadan-image" title="فانوس رمضان">🏮</div>
+                        <div class="ramadan-image" title="هلال ونجمة">🌙⭐</div>
+                        <div class="ramadan-image" title="مسجد">🕌</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== GENERATE RANDOM STARS =====
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numberOfStars = 100;
+
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+
+                // Random position
+                star.style.top = Math.random() * 100 + '%';
+                star.style.left = Math.random() * 100 + '%';
+
+                // Random size (1-3px)
+                const size = Math.random() * 2 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+
+                // Random animation delay
+                star.style.animationDelay = Math.random() * 3 + 's';
+
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // ===== REVEAL HIDDEN SECTION ON BUTTON CLICK =====
+        document.getElementById('revealBtn').addEventListener('click', function () {
+            const hiddenSection = document.getElementById('hiddenSection');
+            hiddenSection.classList.add('revealed');
+
+            // Smooth scroll to hidden section
+            setTimeout(() => {
+                hiddenSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        });
+
+        // ===== COUNTDOWN TIMER TO EID =====
+        function updateCountdown() {
+            // Eid al-Fitr 2026 is expected around March 19, 2026
+            // This is an estimated date (actual date depends on moon sighting)
+            const eidDate = new Date('2026-03-20T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eidDate - now;
+
+            // Calculate time units
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Update DOM
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            // If countdown is finished
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                document.querySelector('.countdown-title').textContent = 'عيد مبارك! 🎉';
+            }
+        }
+
+        // ===== INITIALIZATION =====
+        // Create stars on page load
+        createStars();
+
+        // Start countdown
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>
